@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // API Endpoint
-    const API_URL = "http://127.0.0.1:8000/predict";
+    const API_URL = "https://mental-health-score-prediction-1-bswd.onrender.com";
 
     // DOM Elements
     const form = document.getElementById("prediction-form");
