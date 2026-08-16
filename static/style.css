@@ -186,8 +186,8 @@ body {
 
 .visual-card {
     position: relative;
-    width: 240px;
-    height: 240px;
+    width: 340px;
+    height: 340px;
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     border-radius: 50%;
     display: flex;
@@ -600,4 +600,16 @@ select:focus {
     }
     
     .card { padding: 24px; }
+}
+.circle-user-img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    border: 4px solid #ffffff;
+    box-shadow: 0 8px 24px rgba(79, 70, 229, 0.25);
 }
