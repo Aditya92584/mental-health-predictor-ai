@@ -1,9 +1,11 @@
-flask
-flask-cors
 fastapi
 uvicorn
 pydantic
+scikit-learn
+gunicorn
+flask
+flask-cors
 numpy
 pandas
-scikit-learn
+scikit-learn==1.8.0
 joblib
