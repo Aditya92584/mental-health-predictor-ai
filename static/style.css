@@ -1,3 +1,54 @@
+/* Default desktop view: hide toggle button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color, #333);
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show three dots icon on mobile */
+    }
+
+    nav {
+        display: none; /* Hide navigation links by default */
+        position: absolute;
+        top: 100%;
+        right: 15px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        width: 180px;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+    /* Class added via JavaScript on click */
+    nav.active {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 10px 20px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .nav-links li a:hover {
+        background-color: #f0f4f8;
+    }
+}
 /* ==========================================================================
    CSS VARIABLES & DESIGN TOKENS
    ========================================================================== */
@@ -87,7 +138,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: a;
 }
 
 .logo {

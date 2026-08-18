@@ -16,6 +16,7 @@
 <body>
 
     <!-- Header / Navbar -->
+    <!-- Header / Navbar -->
     <header class="navbar-header">
         <div class="container navbar">
             <div class="logo">
@@ -25,11 +26,17 @@
                     <span class="brand-subtitle">AI-Powered Mental Health Prediction</span>
                 </div>
             </div>
-            <nav>
+
+            <!-- Mobile Toggle Button (Three Dots / Hamburger Icon) -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+
+            <nav id="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#prediction">Prediction</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#prediction" class="nav-link">Prediction</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
                 </ul>
             </nav>
         </div>

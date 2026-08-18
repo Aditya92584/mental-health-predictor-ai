@@ -62,6 +62,25 @@ form.addEventListener('submit', async (e) => {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Three dots click event
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when any link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+});
 // 5. Predict Again Button Handler
 const predictAgainBtn = document.getElementById('predict-again-btn');
 if (predictAgainBtn) {
