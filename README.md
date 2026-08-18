@@ -6,7 +6,7 @@ An end-to-end Data Science and Machine Learning web application designed to eval
 
 ## 🚀 Live Demo & Repository
 
-* **Live Application:** [Click here for live link ](https://mental-health-score-prediction-2kxv.onrender.com)
+* **Live Application:** [Click here for live link ](https://mental-health-predictor-ai.onrender.com/)
 * **GitHub Repository:** [Click here for Repository link](https://github.com/Aditya92584/Mental_Health_Score_Prediction)
 
 ---
