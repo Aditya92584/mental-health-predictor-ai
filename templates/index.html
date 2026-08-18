@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindCare AI — Mental Health Score Prediction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <header class="navbar-header">
+        <div class="container navbar">
+            <div class="logo">
+                <i class="fa-solid fa-brain-circuit logo-icon"></i>
+                <div class="logo-text">
+                    <span class="brand-title">MindCare AI</span>
+                    <span class="brand-subtitle">AI-Powered Mental Health Prediction</span>
+                </div>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+
+            <nav id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#prediction" class="nav-link">Prediction</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    
+                    <h1>Understand Your Mental Health Score with AI</h1>
+                    <p>Enter your lifestyle, academic, and social media usage information to get an instant, AI-powered mental health score prediction designed to offer personal insights.</p>
+                    <span class="badge"><i class="fa-solid fa-sparkles"></i> Aditya Srivastava</span><br>
+                    <a href="#prediction" class="btn btn-primary btn-large">
+                        <i class="fa-solid fa-calculator"></i> Start Prediction
+                    </a>
+                </div>
+                <div class="hero-visual">
+                    <div class="visual-card">
+                        <div class="pulse-ring"></div>
+                            <img src="../static/profile.png" alt="MindCare AI" class="circle-user-img">
+                    </div>    
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="prediction" class="prediction-section">
+            <div class="container">
+                
+                
+                <div id="error-alert" class="alert alert-danger hidden" role="alert">
+                    <i class="fa-solid fa-circle-exclamation alert-icon"></i>
+                    <div class="alert-content">
+                        <strong class="alert-title">Connection Error</strong>
+                        <span id="error-message">Unable to connect to the prediction server. Please make sure the FastAPI backend is running.</span>
+                    </div>
+                    <button type="button" class="alert-close" id="close-error"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+
+                
+                <div class="card form-card">
+                    <div class="card-header">
+                        <h2>Student Mental Health Assessment</h2>
+                        <p>Please provide accurate information for a better prediction.</p>
+                    </div>
+
+                    <form id="prediction-form" novalidate>
+                        
+                        
+                        <div class="form-section">
+                            <h3 class="section-title"><i class="fa-solid fa-user"></i> Section A — Personal Information</h3>
+                            <div class="grid-2">
+                                <div class="form-group">
+                                    <label for="age">Age <span class="required">*</span></label>
+                                    <input type="number" id="age" name="age" min="10" max="100" placeholder="e.g. 21" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="gender">Gender <span class="required">*</span></label>
+                                    <select id="gender" name="gender" required>
+                                        <option value="" disabled selected>Select gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Country <span class="required">*</span></label>
+                                    <select id="country" name="country" required>
+                                        <option value="" disabled selected>Select your country</option>
+                                        <option value="Other">Other</option>
+                                        <option value="India">India</option>
+                                        <option value="USA">USA</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="UK">UK</option>
+                                        <option value="Germany">Germany</option>
+                                        <option value="Mexico">Mexico</option>
+                                        <option value="Turkey">Turkey</option>
+                                        <option value="France">France</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="academic_level">Academic Level <span class="required">*</span></label>
+                                    <select id="academic_level" name="academic_level" required>
+                                        <option value="" disabled selected>Select academic level</option>
+                                        <option value="High School">High School</option>
+                                        <option value="Undergraduate">Undergraduate</option>
+                                        <option value="Graduate">Graduate</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-section">
+                            <h3 class="section-title"><i class="fa-solid fa-hashtag"></i> Section B — Social Media Usage</h3>
+                            <div class="grid-2">
+                                <div class="form-group">
+                                    <label for="most_used_platform">Most Used Platform <span class="required">*</span></label>
+                                    <select id="most_used_platform" name="most_used_platform" required>
+                                        <option value="" disabled selected>Select primary platform</option>
+                                        <option value="Facebook">Facebook</option>
+                                        <option value="LinkedIn">LinkedIn</option>
+                                        <option value="Instagram">Instagram</option>
+                                        <option value="Snapchat">Snapchat</option>
+                                        <option value="Twitter">Twitter</option>
+                                        <option value="YouTube">YouTube</option>
+                                        <option value="TikTok">TikTok</option>
+                                        <option value="LINE">LINE</option>
+                                        <option value="KakaoTalk">KakaoTalk</option>
+                                        <option value="VKontakte">VKontakte</option>
+                                        <option value="WhatsApp">WhatsApp</option>
+                                        <option value="WeChat">WeChat</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="purpose_of_use">Purpose of Use <span class="required">*</span></label>
+                                    <select id="purpose_of_use" name="purpose_of_use" required>
+                                        <option value="" disabled selected>Select main purpose</option>
+                                        <option value="Networking">Networking</option>
+                                        <option value="Education">Education</option>
+                                        <option value="Entertainment">Entertainment</option>
+                                        <option value="News">News</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="avg_daily_usage_hours">Average Daily Usage (Hours) <span class="required">*</span></label>
+                                    <input type="number" id="avg_daily_usage_hours" name="avg_daily_usage_hours" min="0" max="24" step="0.1" placeholder="e.g. 4.5" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="daily_unlocks">Daily Unlocks <span class="required">*</span></label>
+                                    <input type="number" id="daily_unlocks" name="daily_unlocks" min="0" placeholder="e.g. 50" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-section">
+                            <h3 class="section-title"><i class="fa-solid fa-heart-pulse"></i> Section C — Lifestyle & Well-Being</h3>
+                            <div class="grid-2">
+                                <div class="form-group">
+                                    <label for="study_hours">Study Hours Per Day <span class="required">*</span></label>
+                                    <input type="number" id="study_hours" name="study_hours" min="0" max="24" step="0.1" placeholder="e.g. 5" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="physical_activity_hours">Physical Activity Hours <span class="required">*</span></label>
+                                    <input type="number" id="physical_activity_hours" name="physical_activity_hours" min="0" max="24" step="0.1" placeholder="e.g. 1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sleep_hours_per_night">Sleep Hours Per Night <span class="required">*</span></label>
+                                    <input type="number" id="sleep_hours_per_night" name="sleep_hours_per_night" min="0" max="24" step="0.1" placeholder="e.g. 7" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="stress_level">Perceived Stress Level <span class="required">*</span></label>
+                                    <select id="stress_level" name="stress_level" required>
+                                        <option value="" disabled selected>Select stress level</option>
+                                        <option value="Low">Low</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="High">High</option>
+                                        <option value="Very High">Very High</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" id="predict-btn" class="btn btn-primary btn-block btn-large">
+                                <span class="btn-text">Predict Mental Health Score</span>
+                                <span class="spinner hidden" id="btn-spinner"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div id="result-card" class="card result-card hidden">
+                    <div class="result-header">
+                        <i class="fa-solid fa-square-poll-vertical result-icon"></i>
+                        <h2>Your Predicted Mental Health Score</h2>
+                    </div>
+                    
+                    <div class="score-display">
+                        <span id="score-value" class="score-number">--</span>
+                        <span class="score-max">/ 10</span>
+                    </div>
+
+                    <div class="interpretation-box" id="interpretation-box">
+                        <p id="score-interpretation">Calculating interpretation...</p>
+                    </div>
+
+                    <div class="disclaimer-box">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <p><strong>Disclaimer:</strong> This is an AI prediction generated by a statistical model and is <strong>NOT</strong> a medical diagnosis. If you are feeling overwhelmed, please seek support from a certified mental health professional.</p>
+                    </div>
+
+                    <div class="result-actions">
+                        <button id="predict-again-btn" class="btn btn-outline">
+                            <i class="fa-solid fa-rotate-left"></i> Predict Again
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>About MindCare AI</h2>
+                    <p>MindCare AI is a machine-learning based application designed to predict a student's mental health score using lifestyle, academic, and social media usage factors.</p>
+                </div>
+
+                <div class="grid-3 feature-grid">
+                    <div class="card feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <h3>AI Powered Prediction</h3>
+                        <p>Leverages robust statistical machine learning algorithms trained to evaluate multi-faceted behavioral data points efficiently.</p>
+                    </div>
+                    <div class="card feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-sliders"></i></div>
+                        <h3>Lifestyle Analysis</h3>
+                        <p>Examines real-world indicators including sleep patterns, screen duration, physical exercise, and academic stress metrics.</p>
+                    </div>
+                    <div class="card feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>FastAPI Backend</h3>
+                        <p>Powered by a high-performance Python FastAPI engine ensuring lightweight execution, strict schemas, and low-latency API predictions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p class="copyright">&copy; 2026 MindCare AI — AI-Based Mental Health Prediction</p>
+            <p class="tech-stack">Built with FastAPI, Machine Learning, HTML, CSS &amp; JavaScript</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../static/script.js"></script>
+</body>
+</html>
